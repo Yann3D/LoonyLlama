@@ -1,13 +1,14 @@
 ﻿#pragma strict
+import UnityEngine.UI;
 
-var scoreText : tk2dTextMesh;
+var scoreText : Text;
 var scoreGO : GameObject;
 var roueDesTentes : GameObject;
-var nbTentes : tk2dTextMesh;
-var energyGauge : tk2dUIScrollbar;
-var bonusLancerTxt : tk2dTextMesh;
+var nbTentes : Text;
+//var energyGauge : tk2dUIScrollbar;
+var bonusLancerTxt : Text;
 var achManager : AchievementsManager;
-var bonusTxt : tk2dTextMesh;
+var bonusTxt : Text;
 
 private var score : int;
 private var intTentes : int = 0;
@@ -58,10 +59,10 @@ function GenerateScore (popSpot : GameObject, valeurScore : int, caption : Strin
 		}
 		Destroy(scoreTxt,0.4);
 		if (valeurScore < 0){
-			scoreTxt.transform.Find("ScoreVelo").GetComponent(tk2dTextMesh).text = caption + "\r\n" + valeurScore.ToString();
+			scoreTxt.transform.Find("ScoreVelo").GetComponent(Text).text = caption + "\r\n" + valeurScore.ToString();
 		}
 		else{
-			scoreTxt.transform.Find("ScoreVelo").GetComponent(tk2dTextMesh).text = caption + "\r\n + " + valeurScore.ToString();
+			scoreTxt.transform.Find("ScoreVelo").GetComponent(Text).text = caption + "\r\n + " + valeurScore.ToString();
 		}
 		ScoreUp(valeurScore);
 		//valeurScore += valeurScore;
@@ -119,16 +120,16 @@ function StopRoue(){
 //Gère le bonus de lancer du lama et affiche le score supplémentaire
 function BonusGauge(){
 	bonusLancerTxt.gameObject.transform.parent.gameObject.SetActive(true);
-	if (energyGauge.Value == 1){
-		PlayerPrefs.SetInt("LancerParfait",1);
-		bonusLancerTxt.text = "Lancer Parfait !! \r\n + 10 000 !";
-		ScoreUp(10000);
-	}
-	else{
-		PlayerPrefs.SetInt("LancerParfait",0);
-		bonusLancerTxt.text = bonusLancerTxt.text + " " + Mathf.RoundToInt(energyGauge.Value * 10000).ToString() + " !";
-		ScoreUp(Mathf.RoundToInt(energyGauge.Value * 10000));
-	}
+//	if (energyGauge.Value == 1){
+//		PlayerPrefs.SetInt("LancerParfait",1);
+//		bonusLancerTxt.text = "Lancer Parfait !! \r\n + 10 000 !";
+//		ScoreUp(10000);
+//	}
+//	else{
+//		PlayerPrefs.SetInt("LancerParfait",0);
+//		bonusLancerTxt.text = bonusLancerTxt.text + " " + Mathf.RoundToInt(//energyGauge.Value * 10000).ToString() + " !";
+//		ScoreUp(Mathf.RoundToInt(//energyGauge.Value * 10000));
+//	}
 	yield WaitForSeconds (1.5);
 	bonusLancerTxt.gameObject.transform.parent.gameObject.SetActive(false);
 }

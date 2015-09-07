@@ -1,7 +1,8 @@
 ﻿#pragma strict
+import UnityEngine.UI;
 
 var textInput : GameObject;
-var nameInput : tk2dTextMesh;
+var nameInput : Text;
 var mainScript : MainMenu;
 private var validateName : boolean = false;
 

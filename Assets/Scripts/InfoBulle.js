@@ -1,8 +1,9 @@
 ﻿#pragma strict
+import UnityEngine.UI;
 
 var cam : Camera;
 var cadre : GameObject;
-var cadreText : tk2dTextMesh;
+var cadreText : Text;
 var infoText : String;
 var origin : boolean = false;
 private var newCadre : GameObject;

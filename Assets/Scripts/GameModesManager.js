@@ -13,7 +13,7 @@ var lamaRig : GameObject;
 
 //Barre d'énergie
 var energyGauge : GameObject;
-var energy : tk2dUIProgressBar;
+//var energy : tk2dUIProgressBar;
 
 //Jeunes
 var youngPeon : YoungMoves;
@@ -48,21 +48,21 @@ function Start () {
 function Update () {
 
 	//Si la jauge est à 0, stoppe le jeu
-	if (playing){
-		if (energy.Value == 0){
-			lamaRig.GetComponent.<Animation>().Stop();
-			mainScript.ApparitionPlusDEnergie();
-			activeYoung.HideAssociatedRecoltables();
-			activeYoung.StopYoungMoves();
-			activeYoung.ImmobiliseJeune();
-			playing = false;
-		}
-	}
+//	if (playing){
+//		if (energy.Value == 0){
+//			lamaRig.GetComponent.<Animation>().Stop();
+//			mainScript.ApparitionPlusDEnergie();
+//			activeYoung.HideAssociatedRecoltables();
+//			activeYoung.StopYoungMoves();
+//			activeYoung.ImmobiliseJeune();
+//			playing = false;
+//		}
+//	}
 
 	//Fait descendre la barre d'énergie au-dessus des jeunes
-	if (consommeEnergy){
-		energy.Value -= vitesseDeVidange * Time.deltaTime;
-	}
+//	if (consommeEnergy){
+//		energy.Value -= vitesseDeVidange * Time.deltaTime;
+//	}
 	
 	if (jumpMode){
 		if (Input.GetMouseButtonDown(0)){
@@ -147,14 +147,14 @@ function InterModePhysicsSetup(){
 
 //Cache la barre d'énergie
 function HideEnergyGauge(){
-	energy.Value = 1;
-	energyGauge.SetActive(false);
+//	energy.Value = 1;
+//	energyGauge.SetActive(false);
 }
 
 //Montre la barre d'énergie
 function ShowEnergyGauge(){
-	energy.Value = 1;
-	energyGauge.SetActive(true);
+//	energy.Value = 1;
+//	energyGauge.SetActive(true);
 }
 
 //Arrete la consommation d'énergie

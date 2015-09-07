@@ -1,4 +1,5 @@
 ﻿#pragma strict
+import UnityEngine.UI;
 
 var pigeonManager : PigeonManager;
 var lamanager : Lamanager;
@@ -14,16 +15,16 @@ var ecranFinC : GameObject;
 var energyTxt : GameObject;
 var ecranRecap : GameObject;
 var spotRecap : GameObject;
-var score : tk2dTextMesh;
-var scoreRecap : tk2dTextMesh;
+var score : Text;
+var scoreRecap : Text;
 
-var tickartes : tk2dTextMesh;
-var croissants : tk2dTextMesh;
-var caneles : tk2dTextMesh;
-var macarons : tk2dTextMesh;
-var sandwichs : tk2dTextMesh;
-var raisins : tk2dTextMesh;
-var distance : tk2dTextMesh;
+var tickartes : Text;
+var croissants : Text;
+var caneles : Text;
+var macarons : Text;
+var sandwichs : Text;
+var raisins : Text;
+var distance : Text;
 
 private var recap : boolean = false;
 private var goPigeon : boolean = true;

@@ -1,8 +1,9 @@
 #pragma strict
+import UnityEngine.UI;
 
-var ligneC : tk2dClippedSprite;
-var ligneB : tk2dClippedSprite;
-var ligneA : tk2dClippedSprite;
+var ligneC : Text;
+var ligneB : Text;
+var ligneA : Text;
 
 var tickartes : Transform;
 
@@ -16,15 +17,15 @@ private var nouvelleValeurA : float = -0.99;
 
 function Start () {
 	if (PlayerPrefs.GetInt("Difficulty") == 0){
-		ligneC.ClipRect = Rect(nouvelleValeurC,0,1,1);
+		//ligneC.ClipRect = Rect(nouvelleValeurC,0,1,1);
 		tickartes.position = spotC.position;
 	}
 	if (PlayerPrefs.GetInt("Difficulty") == 1){
-		ligneC.ClipRect = Rect(nouvelleValeurB,0,1,1);
+		//ligneC.ClipRect = Rect(nouvelleValeurB,0,1,1);
 		tickartes.position = spotB.position;
 	}
 	if (PlayerPrefs.GetInt("Difficulty") == 2){
-		ligneC.ClipRect = Rect(nouvelleValeurA,0,1,1);
+		//ligneC.ClipRect = Rect(nouvelleValeurA,0,1,1);
 		tickartes.position = spotA.position;
 	}
 }
@@ -42,7 +43,7 @@ function AjouteArret(difficulty : int, nbCartes : int){
 			if (nouvelleValeurC >= 0){
 				nouvelleValeurC = 0;
 			}
-			ligneC.ClipRect = Rect(nouvelleValeurC,0,1,1);
+			//ligneC.ClipRect = Rect(nouvelleValeurC,0,1,1);
 		}
 	}
 	if (difficulty == 1){
@@ -52,7 +53,7 @@ function AjouteArret(difficulty : int, nbCartes : int){
 			if (nouvelleValeurB >= 0){
 				nouvelleValeurB = 0;
 			}
-			ligneB.ClipRect = Rect(nouvelleValeurB,0,1,1);
+			//ligneB.ClipRect = Rect(nouvelleValeurB,0,1,1);
 		}
 	}
 	if (difficulty == 2){
@@ -62,7 +63,7 @@ function AjouteArret(difficulty : int, nbCartes : int){
 			if (nouvelleValeurA >= 0){
 				nouvelleValeurA = 0;
 			}
-			ligneA.ClipRect = Rect(nouvelleValeurA,0,1,1);
+			//ligneA.ClipRect = Rect(nouvelleValeurA,0,1,1);
 		}
 	}
 }

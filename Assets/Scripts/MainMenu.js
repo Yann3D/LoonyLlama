@@ -1,8 +1,9 @@
 ﻿#pragma strict
+import UnityEngine.UI;
 
 var menu : GameObject; 
 var nameInput : GameObject;
-var welcomeText : tk2dTextMesh;
+var welcomeText : Text;
 private var nameEntered : boolean = false;
 
 function Start () {
