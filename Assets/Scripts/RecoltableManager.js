@@ -1,4 +1,6 @@
 ﻿#pragma strict
+#pragma downcast
+import UnityEngine.UI;
 
 var scoreManager : ScoreManager;
 var ligneTramManager : LigneTramManager;
@@ -6,14 +8,14 @@ var gameModesManager : GameModesManager;
 var achManager : AchievementsManager;
 var apparitionMrLoyal : ApparitionMrLoyal;
 var tutoScript : Tutoriel;
-var energyGauge : tk2dUIProgressBar;
-var txtCroissants : tk2dTextMesh;
+//var energyGauge : tk2dUIProgressBar;
+var txtCroissants : Text;
 var croissantsParent : Transform;
-var txtCaneles : tk2dTextMesh;
-var txtMacarons : tk2dTextMesh;
-var txtSandwichs : tk2dTextMesh;
-var txtRaisins : tk2dTextMesh;
-var txtCartes : tk2dTextMesh;
+var txtCaneles : Text;
+var txtMacarons : Text;
+var txtSandwichs : Text;
+var txtRaisins : Text;
+var txtCartes : Text;
 
 var minSpawnHeight : float;
 var maxSpawnHeight : float;
@@ -56,7 +58,7 @@ function AjouteUnRecoltable (aAjouter : String, valeur : int, rec : GameObject) 
 	scoreManager.GenerateScore(rec, valeur, "1 " + aAjouter + " !");
 	if (aAjouter == "Croissant"){
 		Sounds();
-		energyGauge.Value += 0.3;
+		//energyGauge.Value += 0.3;
 		nbCroissants += 1;
 		achManager.CheckRecoltables("Reveil Difficile", 100);
 		PlayerPrefs.SetInt("Croissants", PlayerPrefs.GetInt("Croissants") + 1);
@@ -67,7 +69,7 @@ function AjouteUnRecoltable (aAjouter : String, valeur : int, rec : GameObject) 
 	}
 	if (aAjouter == "Canele"){
 		Sounds();
-		energyGauge.Value += 0.3;
+		//energyGauge.Value += 0.3;
 		nbCaneles += 1;
 		achManager.CheckRecoltables("Angles Arrondis", 120);
 		PlayerPrefs.SetInt("Caneles", PlayerPrefs.GetInt("Caneles") + 1);
@@ -79,7 +81,7 @@ function AjouteUnRecoltable (aAjouter : String, valeur : int, rec : GameObject) 
 	}
 	if (aAjouter == "Macaron"){
 		Sounds();
-		energyGauge.Value += 0.3;
+		//energyGauge.Value += 0.3;
 		nbMacarons += 1;
 		achManager.CheckRecoltables("Connaisseur", 150);
 		PlayerPrefs.SetInt("Macarons", PlayerPrefs.GetInt("Macarons") + 1);
@@ -90,7 +92,7 @@ function AjouteUnRecoltable (aAjouter : String, valeur : int, rec : GameObject) 
 	}
 	if (aAjouter == "Sandwich"){
 		Sounds();
-		energyGauge.Value += 0.3;
+		//energyGauge.Value += 0.3;
 		nbSandwichs += 1;
 		achManager.CheckRecoltables("Rustique", 170);
 		PlayerPrefs.SetInt("Sandwichs", PlayerPrefs.GetInt("Sandwichs") + 1);
@@ -101,7 +103,7 @@ function AjouteUnRecoltable (aAjouter : String, valeur : int, rec : GameObject) 
 	}
 	if (aAjouter == "Raisin"){
 		Sounds();
-		energyGauge.Value += 0.3;
+		//energyGauge.Value += 0.3;
 		nbRaisins += 1;
 		achManager.CheckRecoltables("Ami de la Vigne", 200);
 		PlayerPrefs.SetInt("Raisins", PlayerPrefs.GetInt("Raisins") + 1);

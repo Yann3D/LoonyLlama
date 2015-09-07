@@ -1,4 +1,5 @@
 ﻿#pragma strict
+#pragma downcast
 
 var emitSpot : GameObject;
 var projectile : GameObject;
@@ -53,14 +54,13 @@ function EmitObject () {
 function ObjectImpulse (object : int) {
 if (object == 0){
 	return 800;
-}
-if (object == 1){
+} else if (object == 1){
 	return 400;
-}
-if (object == 2){
+} else if (object == 2){
 	return 500;
-}
-if (object == 3){
+} else if (object == 3){
 	return 500;
+}else{
+	return 0;
 }
 }

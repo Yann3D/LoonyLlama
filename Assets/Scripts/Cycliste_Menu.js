@@ -1,4 +1,5 @@
 ﻿#pragma strict
+#pragma downcast
 
 var cycleUn : GameObject;
 var cycleDeux : GameObject;

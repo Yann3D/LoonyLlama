@@ -24,7 +24,7 @@ var valeurDuClic : int = 150;
 //Jeune
 private var corpsDuJeune : GameObject;
 var youngFall : GameObject;
-var vfxCourse : tk2dSpriteAnimator;
+//var vfxCourse : tk2dSpriteAnimator;
 var porteur : boolean;
 var brouette : boolean;
 var hoverboard : boolean;
@@ -203,7 +203,7 @@ function YoungAndLlamaSetup () {
 	}
 	if (hoverboard){
 		GameObject.Find("MrLoyal").transform.rotation.y = 180;
-		vfxCourse.gameObject.SetActive(true);
+		//vfxCourse.gameObject.SetActive(true);
 		playVFXCourse = true;
 		corpsDuJeune.GetComponent.<Animation>().Play();
 		yield WaitForSeconds(Time.deltaTime);
@@ -218,7 +218,7 @@ function YoungAndLlamaSetup () {
 		projectile.SetActive(false);
 	}
 	if (baigneur){
-		vfxCourse.gameObject.SetActive(true);
+		//vfxCourse.gameObject.SetActive(true);
 		playVFXCourse = true;
 		corpsDuJeune.GetComponent.<Animation>().Play("NageSurf");
 		yield WaitForSeconds(Time.deltaTime);
@@ -261,7 +261,7 @@ function EjectLlama(){
 			PlayerPrefs.SetInt("Lama dans la brume",1);
 			achManager.DisplayUnlockedAchievement("Lama dans la brume");
 		}
-		vfxCourse.gameObject.SetActive(false);
+		//vfxCourse.gameObject.SetActive(false);
 		projectile.transform.rotation = Quaternion.identity;
 		projectile.GetComponent.<Rigidbody>().AddForce(Vector3(7,4,0),ForceMode.Impulse);
 		goBack = true;
@@ -292,7 +292,7 @@ function EjectLlama(){
 //Joue les FX sous les pieds des jeunes
 function VFX_Course () {
 	playVFXCourse = false;
-	vfxCourse.Play();
+	//vfxCourse.Play();
 	yield WaitForSeconds(0.1);
 	playVFXCourse = true;
 }
@@ -300,7 +300,7 @@ function VFX_Course () {
 //Joue les FX sous les pieds des jeunes
 function VFX_Course_Quinconces () {
 	playVFXCourse = false;
-	vfxCourse.Play();
+	//vfxCourse.Play();
 	yield WaitForSeconds(0.38);
 	playVFXCourse = true;
 }
@@ -319,7 +319,7 @@ function UpdateSpeedMove () {
 //Désactive le jeune et le fige, ainsi que le lama
 function ImmobiliseJeune(){
 	corpsDuJeune.GetComponent.<Animation>().Stop();
-	vfxCourse.enabled = false;
+	//vfxCourse.enabled = false;
 }
 
 //Cache les récoltables associés au jeune

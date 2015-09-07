@@ -1,8 +1,9 @@
 ﻿#pragma strict
+import UnityEngine.UI;
 
 var projectile : GameObject;
 var lamaRig : GameObject;
-var distanceText : tk2dTextMesh;
+var distanceText : Text;
 private var distance : int;
 var spotLamaCanon : Transform;
 var scoreManager : ScoreManager;

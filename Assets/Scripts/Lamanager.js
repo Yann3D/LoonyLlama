@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 var lamaRig : GameObject;
-var vfx_roule : tk2dSpriteAnimator;
+//var vfx_roule : tk2dSpriteAnimator;
 private var bGrounded : boolean;
 private var neverBounced : boolean;
 private var mirorImpactNb : int = 0;
@@ -60,8 +60,8 @@ function OnCollisionEnter (collision : Collision){
 function OnCollisionStay (collision : Collision){
 	if (collision.collider.tag == "Ground"){
 		bGrounded = true;
-		vfx_roule.gameObject.SetActive(true);
-		vfx_roule.Play();
+//		vfx_roule.gameObject.SetActive(true);
+//		vfx_roule.Play();
 	}
 }
 

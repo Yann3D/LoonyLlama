@@ -1,7 +1,8 @@
 ﻿#pragma strict
+import UnityEngine.UI;
 
 var pancarte : GameObject;
-var txtAchievement : tk2dTextMesh;
+var txtAchievement : Text;
 static var entreesTram : int = 0;
 
 function Start () {
