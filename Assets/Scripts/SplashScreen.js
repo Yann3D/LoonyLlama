@@ -1,13 +1,15 @@
 ﻿#pragma strict
 
+import UnityEngine.SceneManagement;
+
 function Start () {
-	//PlayerPrefs.SetString("Name","");
+	
 }
 
 function Update () {
 
-	//Fait apparaitre le menu
-	if (Input.GetMouseButton(0)){
-		Application.LoadLevel(1);
-	}
+}
+
+function OnClickSplashscreen (){
+	SceneManager.LoadScene("Menu");
 }
