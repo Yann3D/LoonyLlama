@@ -10,9 +10,7 @@ public class LamaTare : MonoBehaviour {
 	// Use this for initialization
 	void Awake ()
 	{
-		if (Application.loadedLevel == 2){
-			SetRandomFiringPlatformHeight();
-		}
+		SetRandomFiringPlatformHeight();
 	}
 	
 	// Update is called once per frame
