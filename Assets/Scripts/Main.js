@@ -38,28 +38,26 @@ function Start () {
 }
 
 function Update () {
-	if (Application.loadedLevel == 2){
 	
-		if (Input.GetKeyDown("escape") && !isPaused){
-			Pause();
-		}
-		else if (Input.GetKeyDown("escape") && isPaused){
-			UnPause();
-		}
-		
-		//Lance la génération des pigeons après le lancement du lama
-		if (goPigeon){
-			if (lamaRig.GetComponent.<Animation>().IsPlaying("Ejection")){
-				distanceManager.enabled = true;
-				pigeonManager.enabled = true;
-				goPigeon = false;
-			}	
-		}
-		
-		//Fait glisser l'écran de récap devant la caméra
-		if (recap){
-			ecranRecap.transform.position = Vector3.MoveTowards(ecranRecap.transform.position,spotRecap.transform.position,Time.deltaTime * 40);
-		}
+	if (Input.GetKeyDown("escape") && !isPaused){
+		Pause();
+	}
+	else if (Input.GetKeyDown("escape") && isPaused){
+		UnPause();
+	}
+	
+	//Lance la génération des pigeons après le lancement du lama
+	if (goPigeon){
+		if (lamaRig.GetComponent.<Animation>().IsPlaying("Ejection")){
+			distanceManager.enabled = true;
+			pigeonManager.enabled = true;
+			goPigeon = false;
+		}	
+	}
+	
+	//Fait glisser l'écran de récap devant la caméra
+	if (recap){
+		ecranRecap.transform.position = Vector3.MoveTowards(ecranRecap.transform.position,spotRecap.transform.position,Time.deltaTime * 40);
 	}
 }
 
