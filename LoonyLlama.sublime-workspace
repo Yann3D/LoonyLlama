@@ -1,0 +1,589 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"car",
+				"cardsSprites"
+			],
+			[
+				"sp",
+				"sprt"
+			],
+			[
+				"succ",
+				"successObject"
+			],
+			[
+				"Lo",
+				"LocalisedText"
+			],
+			[
+				"Get",
+				"GetComponent"
+			],
+			[
+				"gam",
+				"gameId"
+			],
+			[
+				"game",
+				"gameStates"
+			],
+			[
+				"object",
+				"objectName"
+			],
+			[
+				"objec",
+				"objectDesc"
+			],
+			[
+				"obje",
+				"object"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"mu",
+				"musicAsset"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Assets/Scripts/NewVersion/Menu/UIMenuManager.js",
+			"settings":
+			{
+				"buffer_size": 2217,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/NewVersion/Objects/Success.js",
+			"settings":
+			{
+				"buffer_size": 403,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Assets/Scripts/NewVersion/Menu/SuccessAttached.js",
+			"settings":
+			{
+				"buffer_size": 223,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#pragma strict\n\nimport UnityEngine.UI;\nimport UnityEngine.SceneManagement;\n\npublic class GP_Biface extends MonoBehaviour {\n\n\tvar gameStates : GameStates;\n\tvar profAnim : Animator;\n\tvar profText : Text;\n\tvar profMoods : GameObject[];\n\tprivate var gameEnded : boolean = false;\n\tvar musicAsset : AudioSource;\n\n\tvar cardsSprites : Sprite[];\n\tvar cards : Card[];\n\tprivate var firstIdx : int = -1;\n\tprivate var secondIdx : int = -1;\n\n\tprivate static var instance : GP_Biface;\n\tpublic static function Instance () : GP_Biface {\n\t\treturn instance;\n\t}\n\n\tfunction Awake (){\n\t\tif (instance != null){\n\t\t\tDestroy (gameObject);\n\t\t}\n\t\telse {\n\t\t\tinstance = this;\n\t\t}\n\t}\n\n\tfunction Start () {\n\t\tSetGameUp();\n\t\tSetProfMood(3);\n\t\tprofAnim.SetTrigger(\"PopupInOut\");\n\t}\n\n\tfunction Update () {\n\t\t\n\t}\n\n\tfunction SetGameUp (){\n\t\tfor (var i = 0; i < cardsSprites.Length; i++){\n\n\t\t}\n\t}\n\n\tfunction SetPair (sprt : Sprite){\n\t\tfor (var )\n\t}\n\n\tfunction GetFreeRandomCard () : Card{\n\t\t\n\t}\n\n\tfunction CheckSimilarities (id : int){\n\t\tif (firstIdx == -1){\n\t\t\tfirstIdx = id;\n\t\t\treturn;\n\t\t}\n\t\telse if (firstIdx != -1){\n\t\t\tsecondIdx = id;\n\t\t}\n\n\t\tif (firstIdx == secondIdx){\n\t\t\tValidatePair();\n\t\t}\n\t}\n\n\tfunction ValidatePair (){\n\n\t}\n\n\tfunction ToggleMuteSound (){\n\t\tmusicAsset.mute = !musicAsset.mute;\n\t}\n\n\tfunction SetProfMood (mood : int){\n\t\tfor (var i = 0; i < profMoods.Length; i++){\n\t\t\tprofMoods[i].SetActive(false);\n\t\t}\n\t\tprofMoods[mood].SetActive(true);\n\t}\n\n\tfunction GameWon (){\n\t\tgameEnded = true;\n\t\tprofText.GetComponent.<LocalisedText>().setNewText(\"gp06_wingame\");\n\t\tif (!gameStates.railSet[2]){\n\t\t\tgameStates.gameWon = true;\n\t\t\tgameStates.miniGames[2].ended = true;\n\t\t}\n\t\tSetProfMood(1);\n\t\tprofAnim.SetTrigger(\"PopupInOut\");\n\t}\n\n\tfunction NextOrQuit (){\n\t\tif (gameEnded){\n\t\t\tQuitMiniGame();\n\t\t}\n\t}\n\n\tfunction QuitMiniGame (){\n\t\tSceneManager.LoadScene(\"00_Main\");\n\t}\n\n\tfunction ExitApplication (){\n\t\tApplication.Quit();\n\t}\n\n}",
+			"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP02/GP_Biface.js",
+			"file_size": 1721,
+			"file_write_time": 131407992269743343,
+			"settings":
+			{
+				"buffer_size": 1898,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP02/Card.js",
+			"settings":
+			{
+				"buffer_size": 244,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Resources/lang.xml",
+			"settings":
+			{
+				"buffer_size": 21323,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP03/Gp_Eras.js",
+			"settings":
+			{
+				"buffer_size": 1548,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP06/Gp_Balneaire.js",
+			"settings":
+			{
+				"buffer_size": 1551,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/Objects/MonMusee/MonMuseeObject.js",
+			"settings":
+			{
+				"buffer_size": 605,
+				"encoding": "UTF-8 with BOM",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/Objects/GameStates.js",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Resources/lang.xml",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/Objects/MonMusee/MonMuseeObject.js",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/Accueil/MyMuseumObject.js",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/Objects/Games/MiniGameObject.js",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP11/Gp_Fossiles.js",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP10/Gp_Monnaies.js",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP08/Gp_Agriculture.js",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP06/Gp_Balneaire.js",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP03/Gp_Eras.js",
+		"/G/ProjetsUnity/PROJETUNITY_LoonyLlama/Assets/Scripts/LamaTare.cs",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/Accueil/Main_UIManager.js",
+		"/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP01/Gp_Intro.js"
+	],
+	"find":
+	{
+		"height": 49.0
+	},
+	"find_in_files":
+	{
+		"height": 135.0,
+		"where_history":
+		[
+			"G:\\ProjetsUnity\\PROJETUNITY_LesRailsDuTemps\\Assets\\Scripts",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"railSet",
+			"miniGames",
+			"associatedObject",
+			"railSet",
+			"GameWon",
+			"endedGames",
+			"bonusGameCrate",
+			"disco",
+			"dosco",
+			"disco",
+			"FillObjectDisplay",
+			"periodTitleText",
+			"gameW",
+			"key",
+			"fouillest",
+			"gameWon",
+			"key",
+			"Animator",
+			"SetupFir",
+			"Openn"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Assets/Scripts/NewVersion/Menu/UIMenuManager.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2217,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								486,
+								486
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1881.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Scripts/NewVersion/Objects/Success.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 403,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16,
+								38
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Assets/Scripts/NewVersion/Menu/SuccessAttached.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 223,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								194,
+								194
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP02/GP_Biface.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								953,
+								953
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1188.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP02/Card.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 244,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								206,
+								206
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Resources/lang.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 21323,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4471,
+								4471
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3085.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP03/Gp_Eras.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1548,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								155,
+								155
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/InGame/GP06/Gp_Balneaire.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1551,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1551
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/G/ProjetsUnity/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/Objects/MonMusee/MonMuseeObject.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 605,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								605
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 41.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "LoonyLlama.sublime-project",
+	"replace":
+	{
+		"height": 78.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

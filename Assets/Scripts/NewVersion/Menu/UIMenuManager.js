@@ -6,6 +6,7 @@ import UnityEngine.EventSystems;
 class UIMenuManager extends MonoBehaviour {
 
 	var nameInput : GameObject;
+	var gameParameters : GameParameters;
 
 	var mainMenu : GameObject;
 	var difficultyMenu : GameObject;
@@ -47,6 +48,10 @@ class UIMenuManager extends MonoBehaviour {
 		currentMenu = difficultyMenu;
 		PlayCurrentMenuEnter();
 		currentMenu.SetActive(true);
+	}
+
+	function OnPickDifficulty (diff : int){
+		gameParameters.difficulty = diff;
 	}
 
 	function OnClickAlbum (){

@@ -536,11 +536,11 @@
 			}
 		},
 		{
-			"file": "Scripts/NewVersion/Menu/CyclisteMenu.js",
+			"file": "/H/Projets/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/Objects/GameStates.js",
 			"settings":
 			{
-				"buffer_size": 330,
-				"line_ending": "Unix"
+				"buffer_size": 333,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -568,6 +568,7 @@
 	},
 	"file_history":
 	[
+		"/H/Projets/PROJETUNITY_LoonyLlama/Assets/Scripts/NewVersion/Menu/CyclisteMenu.js",
 		"/H/Projets/PROJETUNITY_LoonyLlama/Assets/Scripts/NewVersion/Menu/MainMenuManager.js",
 		"/H/Projets/PROJETUNITY_LoonyLlama/Assets/LoonyLlamaScripts.sublime-project",
 		"/H/Projets/PROJETUNITY_LoonyLlama/Assets/LoonyLlamaScripts.sublime-workspace",
@@ -694,8 +695,7 @@
 		"/H/Projets/PROJETUNITY_ArenHack/Assets/Script/Managers/Contracts/ContractsManager.js",
 		"/H/Projets/Waves/Assets/Emetteur.js",
 		"/H/Projets/PROJETUNITY_ArenHack/Assets/Script/Player/Player.js",
-		"/H/Projets/PROJETUNITY_ArenHack/Assets/Script/Player/Skills.js",
-		"/H/Projets/PROJETUNITY_TinyToysTales/Assets/Scripts/UI/UIManager.js"
+		"/H/Projets/PROJETUNITY_ArenHack/Assets/Script/Player/Skills.js"
 	],
 	"find":
 	{
@@ -871,7 +871,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -919,7 +919,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 1406.0,
@@ -929,18 +930,18 @@
 				},
 				{
 					"buffer": 2,
-					"file": "Scripts/NewVersion/Menu/CyclisteMenu.js",
+					"file": "/H/Projets/PROJETUNITY_LesRailsDuTemps/Assets/Scripts/Objects/GameStates.js",
 					"settings":
 					{
-						"buffer_size": 330,
+						"buffer_size": 333,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								155,
-								155
+								0,
+								0
 							]
 						],
 						"settings":
