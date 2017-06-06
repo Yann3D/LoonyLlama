@@ -1,13 +1,2 @@
 {
-	"folders":
-	[
-		{
-			"path": "Scripts",
-			"file_exclude_patterns":
-			[
-				"*.dll",
-				"*.meta"
-			]
-		}
-	]
 }
