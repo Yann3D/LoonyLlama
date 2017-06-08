@@ -1448,7 +1448,7 @@ MonoBehaviour:
   lamanim: {fileID: 0}
   launchGauge: {fileID: 0}
   launchGaugeSpeed: 2
-  lamaImpulse: 15
+  lamaImpulse: 17
   launchSmokeAnim: {fileID: 0}
   pauseMenu: {fileID: 1894013689887720}
 --- !u!114 &114643484539178392

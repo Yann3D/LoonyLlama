@@ -9,5 +9,7 @@ function Update () {
 }
 
 function GameOverLost (){
-	UIManager.Instance().TogglePause();
+	if (!UIManager.Instance().CanBeSaved()){
+		UIManager.Instance().TogglePause();
+	}
 }

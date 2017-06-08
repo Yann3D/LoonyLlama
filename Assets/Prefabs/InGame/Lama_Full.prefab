@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4233801471013194}
   - component: {fileID: 212826143734078024}
   - component: {fileID: 95802884713143542}
+  - component: {fileID: 114436855943192922}
   m_Layer: 0
   m_Name: Lama_Full
   m_TagString: Untagged
@@ -42,7 +43,7 @@ GameObject:
   - component: {fileID: 114331725476038606}
   m_Layer: 0
   m_Name: Lama_Full
-  m_TagString: Untagged
+  m_TagString: Lama
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -434,8 +435,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1112990108548028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.43, y: 1.49, z: 0.08}
-  m_LocalScale: {x: 0.6474008, y: 0.6474009, z: 0.6474007}
+  m_LocalPosition: {x: -0.97, y: 2.15, z: 0.08}
+  m_LocalScale: {x: 0.43866166, y: 0.43866175, z: 0.43866158}
   m_Children:
   - {fileID: 4233857199760894}
   - {fileID: 4233801471013194}
@@ -550,7 +551,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4432357366092080}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -0.042054795, y: -0.042054795, z: 54.9}
+  m_LocalEulerAnglesHint: {x: -0.08800001, y: 0.13700001, z: 55.794003}
 --- !u!4 &4650661625953356
 Transform:
   m_ObjectHideFlags: 1
@@ -576,7 +577,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4432357366092080}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -0.042054795, y: -0.042054795, z: 13.5}
+  m_LocalEulerAnglesHint: {x: -0.08800001, y: 0.13700001, z: 66.994}
 --- !u!4 &4757222250811478
 Transform:
   m_ObjectHideFlags: 1
@@ -603,7 +604,7 @@ Transform:
   - {fileID: 4340035984100178}
   m_Father: {fileID: 4233801471013194}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: -0.018000001, y: 0.038000003, z: 39.834003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 81.4}
 --- !u!4 &4829055723716596
 Transform:
   m_ObjectHideFlags: 1
@@ -707,7 +708,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.64
+  m_Radius: 2.3
 --- !u!82 &82234724856305990
 AudioSource:
   m_ObjectHideFlags: 1
@@ -817,6 +818,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lamanim: {fileID: 95802884713143542}
+  rebondImpulse: 9
+--- !u!114 &114436855943192922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1093708258536420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32b133d19d01a346b638ce8b7f65589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212019139972327084
 SpriteRenderer:
   m_ObjectHideFlags: 1

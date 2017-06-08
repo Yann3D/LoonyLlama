@@ -18,6 +18,9 @@ public class UIManager extends MonoBehaviour {
 	private var launchLama : boolean = false;
 	private var launchUp : boolean = false;
 
+	@Header ("Game")
+	private var canBeSaved : boolean = false;
+
 	var pauseMenu : GameObject;
 	private var pauseActive : boolean = false;
 
@@ -104,5 +107,17 @@ public class UIManager extends MonoBehaviour {
 
 	function IsStartingGame (){
 		return startingGame;
-	} 
+	}
+
+	function SetSavable (){
+		canBeSaved = true;
+	}
+
+	function SetNotSavable (){
+		canBeSaved = false;
+	}
+
+	function CanBeSaved (){
+		return canBeSaved;
+	}
 }
