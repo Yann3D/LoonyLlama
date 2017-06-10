@@ -5,21 +5,15 @@ import UnityEngine.SceneManagement;
 
 public class UIManager extends MonoBehaviour {
 
-	var lamaRB : Rigidbody2D;
-	var lamanim : Animator;
-
 	@Header ("Launch")
 	var launchGauge : Image;
 	var launchGaugeSpeed : float = 1.0;
-	var lamaImpulse : float = 10.0;
-	var launchSmokeAnim : Animation;
-	private var startingGame : boolean = true;
+	
 	private var isLaunching : boolean = false;
-	private var launchLama : boolean = false;
 	private var launchUp : boolean = false;
 
 	@Header ("Game")
-	private var canBeSaved : boolean = false;
+	private var canBeRescued : boolean = false;
 
 	var pauseMenu : GameObject;
 	private var pauseActive : boolean = false;
@@ -43,48 +37,23 @@ public class UIManager extends MonoBehaviour {
 	}
 
 	function Update () {
-		if (startingGame){
-			if (Input.GetMouseButtonDown(0)){
-				isLaunching = true;
+		if (isLaunching){
+			if (launchGauge.fillAmount >= 1 && launchUp){
+				launchUp = false;
 			}
-			if (Input.GetMouseButtonUp(0) || (!Input.GetMouseButton(0) && isLaunching)){
-				isLaunching = false;
-				launchLama = true;
+			else if (launchGauge.fillAmount <= 0 && !launchUp){
+				launchUp = true;
 			}
-
-			if (isLaunching){
-				if (launchGauge.fillAmount >= 1 && launchUp){
-					launchUp = false;
-				}
-				else if (launchGauge.fillAmount <= 0 && !launchUp){
-					launchUp = true;
-				}
-				if (launchUp){
-					launchGauge.fillAmount += launchGaugeSpeed * Time.deltaTime;
-				}
-				else if (!launchUp){
-					launchGauge.fillAmount -= launchGaugeSpeed * Time.deltaTime;
-				}
+			if (launchUp){
+				launchGauge.fillAmount += launchGaugeSpeed * Time.deltaTime;
+			}
+			else if (!launchUp){
+				launchGauge.fillAmount -= launchGaugeSpeed * Time.deltaTime;
 			}
 		}
 
 		if (Input.GetKeyDown("escape")){
 			TogglePause();
-		}
-	}
-
-	function FixedUpdate (){
-		if (launchLama){
-			lamaRB.simulated = true;
-			lamaRB.GetComponent.<CircleCollider2D>().enabled = true;
-			lamaRB.GetComponent.<AudioSource>().Play();
-			lamaRB.transform.SetParent(null);
-			var launchingDirection : Vector3 = lamaRB.transform.TransformDirection(Vector3.up);
-			lamaRB.AddForce (launchingDirection * launchGauge.fillAmount * lamaImpulse, ForceMode2D.Impulse);
-			lamanim.SetTrigger("Launch");
-			launchSmokeAnim.Play();
-			launchLama = false;
-			startingGame = false;
 		}
 	}
 
@@ -105,19 +74,23 @@ public class UIManager extends MonoBehaviour {
 		SceneManager.LoadScene("Lukum_Tare");
 	}
 
-	function IsStartingGame (){
-		return startingGame;
+	function AnimateCanonGauge (state : boolean){
+		isLaunching = state;
 	}
 
-	function SetSavable (){
-		canBeSaved = true;
+	function GetGaugeImpulse (){
+		return launchGauge.fillAmount;
 	}
 
-	function SetNotSavable (){
-		canBeSaved = false;
+	function SetRescuable (){
+		canBeRescued = true;
 	}
 
-	function CanBeSaved (){
-		return canBeSaved;
+	function SetNotRescuable (){
+		canBeRescued = false;
+	}
+
+	function CanBeRescued (){
+		return canBeRescued;
 	}
 }

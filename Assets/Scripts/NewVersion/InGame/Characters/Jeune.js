@@ -1,7 +1,4 @@
-﻿#pragma strict
-
-static var lama : Transform;
-static var sergeScript : Serge;
+#pragma strict
 
 var anim : Animator;
 var parentJeune : Transform;
@@ -9,26 +6,36 @@ var speed : float = 2;
 var lamaSpot : Transform;
 var lamanimToPlay : String;
 var endSpot : Transform;
+var impulseAmount : Vector3 = Vector3(4,4,0);
+var nextJeune : Jeune;
 static var lamanim : Animator;
 private var trackLama : boolean = false;
 private var gotLlama : boolean = false;
+private var ejectLama : boolean = false;
 
 function Start () {
-	if (lama == null){
-		lama = GameObject.FindGameObjectWithTag("Lama").transform;
-	}
+	
 }
 
 function Update () {
 	if (trackLama && !gotLlama){
-		parentJeune.LookAt(Vector3(lama.position.x, transform.position.y, transform.position.z));
+		parentJeune.LookAt(Vector3(Serge.Instance().transform.position.x, transform.position.y, transform.position.z));
 		transform.position = Vector3.MoveTowards (transform.position, 
-			Vector3(lama.position.x, transform.position.y, transform.position.z), speed * Time.deltaTime);
+			Vector3(Serge.Instance().transform.position.x, transform.position.y, transform.position.z), speed * Time.deltaTime);
 	}
 	else if (!trackLama && gotLlama){
 		parentJeune.LookAt(Vector3(endSpot.position.x, transform.position.y, transform.position.z));
 		transform.position = Vector3.MoveTowards (transform.position, 
 			Vector3(endSpot.position.x, transform.position.y, transform.position.z), speed * Time.deltaTime);
+	}
+}
+
+function FixedUpdate (){
+	if (ejectLama){
+		ejectLama = false;
+		Serge.Instance().SetFree();
+		var lamaRB : Rigidbody2D = Serge.Instance().GetComponent.<Rigidbody2D>();
+		lamaRB.AddForce (impulseAmount, ForceMode2D.Impulse);
 	}
 }
 
@@ -39,29 +46,18 @@ function TriggerJeune (){
 
 function OnTriggerEnter2D (collider : Collider2D){
 	if (collider.CompareTag("Lama") ){
-		print ("Lama");
-		if (sergeScript == null){
-			sergeScript = collider.GetComponent.<Serge>();
-			lamanim = sergeScript.GetAnimator();
-		}
-		SetLamaOnJeune();
+		GameManager.Instance().HideZone();
+		trackLama = false;
+		gotLlama = true;
+		anim.SetTrigger("NextStep");
+		Serge.Instance().SetOnJeune(lamaSpot, lamanimToPlay);
 	}
 	else if (collider.CompareTag("EndSpot")){
-		print ("EndSpot");
+		GameManager.Instance().ShowZone();
 		anim.SetTrigger("NextStep");
+		GetComponent.<BoxCollider2D>().enabled = false;
 		gotLlama = false;
-		sergeScript.transform.SetParent(null);
-		lamanim.SetTrigger("Roll");
-		sergeScript.EjectLama();
+		ejectLama = true;
+		nextJeune.TriggerJeune();
 	}
-}
-
-function SetLamaOnJeune (){
-	sergeScript.GetComponent.<CircleCollider2D>().enabled = false;
-	sergeScript.transform.SetParent(lamaSpot);
-	sergeScript.transform.position = lamaSpot.position;
-	lamanim.SetTrigger(lamanimToPlay);
-	anim.SetTrigger("NextStep");
-	trackLama = false;
-	gotLlama = true;
 }

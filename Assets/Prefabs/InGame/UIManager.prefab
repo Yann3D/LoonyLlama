@@ -1444,12 +1444,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83da908e111bd604792810f62e80c74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lamaRB: {fileID: 0}
-  lamanim: {fileID: 0}
+  lama: {fileID: 0}
   launchGauge: {fileID: 0}
   launchGaugeSpeed: 2
-  lamaImpulse: 17
-  launchSmokeAnim: {fileID: 0}
   pauseMenu: {fileID: 1894013689887720}
 --- !u!114 &114643484539178392
 MonoBehaviour:
