@@ -8,6 +8,9 @@ var lamanimToPlay : String;
 var endSpot : Transform;
 var impulseAmount : Vector3 = Vector3(4,4,0);
 var nextJeune : Jeune;
+var isLamaTracker : boolean = true;
+var isCycliste : boolean = false;
+var isJeune04 : boolean = false;
 static var lamanim : Animator;
 private var trackLama : boolean = false;
 private var gotLlama : boolean = false;
@@ -19,9 +22,11 @@ function Start () {
 
 function Update () {
 	if (trackLama && !gotLlama){
-		parentJeune.LookAt(Vector3(Serge.Instance().transform.position.x, transform.position.y, transform.position.z));
-		transform.position = Vector3.MoveTowards (transform.position, 
-			Vector3(Serge.Instance().transform.position.x, transform.position.y, transform.position.z), speed * Time.deltaTime);
+		if (isLamaTracker || (!isLamaTracker && Serge.Instance().transform.position.x > transform.position.x)){
+			parentJeune.LookAt(Vector3(Serge.Instance().transform.position.x, transform.position.y, transform.position.z));
+			transform.position = Vector3.MoveTowards (transform.position, 
+				Vector3(Serge.Instance().transform.position.x, transform.position.y, transform.position.z), speed * Time.deltaTime);
+		}
 	}
 	else if (!trackLama && gotLlama){
 		parentJeune.LookAt(Vector3(endSpot.position.x, transform.position.y, transform.position.z));
@@ -46,14 +51,21 @@ function TriggerJeune (){
 
 function OnTriggerEnter2D (collider : Collider2D){
 	if (collider.CompareTag("Lama") ){
-		GameManager.Instance().HideZone();
+		if (!isCycliste){
+			GameManager.Instance().HideZone();
+		}
 		trackLama = false;
 		gotLlama = true;
-		anim.SetTrigger("NextStep");
-		Serge.Instance().SetOnJeune(lamaSpot, lamanimToPlay);
+		if (isLamaTracker){
+			anim.SetTrigger("NextStep");
+		}
+		gameObject.tag = "Untagged";
+		Serge.Instance().SetOnJeune(lamaSpot, lamanimToPlay, isJeune04);
 	}
 	else if (collider.CompareTag("EndSpot")){
-		GameManager.Instance().ShowZone();
+		if (!isCycliste){
+			GameManager.Instance().ShowZone();
+		}
 		anim.SetTrigger("NextStep");
 		GetComponent.<BoxCollider2D>().enabled = false;
 		gotLlama = false;

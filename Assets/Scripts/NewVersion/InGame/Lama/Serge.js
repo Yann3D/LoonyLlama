@@ -61,15 +61,23 @@ class Serge extends MonoBehaviour {
 		}
 	}
 
-	function SetOnJeune (spot : Transform, animToPlay : String){
+	function SetOnJeune (spot : Transform, animToPlay : String, disappear : boolean){
 		SetStill();
 		transform.SetParent(spot);
 		transform.position = spot.position;
 		transform.localRotation = Quaternion.identity;
-		PlayAnim(animToPlay);
+		if (animToPlay != ""){
+			PlayAnim(animToPlay);
+		}
+		if (disappear){
+			gameObject.SetActive(false);
+		}
 	}
 
 	function SetFree (){
+		if (!gameObject.activeSelf){
+			gameObject.SetActive(false);
+		}
 		lamaRB.simulated = true;
 		myCollider.enabled = true;
 		transform.SetParent(null);
