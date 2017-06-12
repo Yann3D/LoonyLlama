@@ -211,7 +211,7 @@
 			"file": "Scripts/NewVersion/InGame/Lama/Serge.js",
 			"settings":
 			{
-				"buffer_size": 2245,
+				"buffer_size": 2244,
 				"encoding": "UTF-8 with BOM",
 				"line_ending": "Unix"
 			}
@@ -428,7 +428,7 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -551,15 +551,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2245,
+						"buffer_size": 2244,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1669,
-								1669
+								1752,
+								1752
 							]
 						],
 						"settings":
@@ -568,10 +568,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2220.0,
+						"translation.y": 2598.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -656,7 +656,7 @@
 						"translation.y": 2199.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{

@@ -76,7 +76,7 @@ class Serge extends MonoBehaviour {
 
 	function SetFree (){
 		if (!gameObject.activeSelf){
-			gameObject.SetActive(false);
+			gameObject.SetActive(true);
 		}
 		lamaRB.simulated = true;
 		myCollider.enabled = true;

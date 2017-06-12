@@ -18,6 +18,7 @@ TagManager:
   - Rebond
   - Lama
   - EndSpot
+  - Garonne
   layers:
   - Default
   - TransparentFX
