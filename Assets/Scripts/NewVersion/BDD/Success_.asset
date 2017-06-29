@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40bd297f0fa2df46818e8e2c37326a1, type: 3}
+  m_Name: Success_
+  m_EditorClassIdentifier: 
+  successName: 
+  missionDescription: 
+  successSteps: []
+  running: 0
+  ended: 0

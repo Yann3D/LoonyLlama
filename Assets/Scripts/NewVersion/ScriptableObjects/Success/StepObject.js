@@ -9,4 +9,5 @@ class StepObject extends ScriptableObject {
 	@Header ("Step Object")
 	var objectName : String;
 	var objectPrefab : GameObject;
+	var numberToCatch : int;
 }
